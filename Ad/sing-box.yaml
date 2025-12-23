@@ -1,0 +1,26 @@
+{
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns_block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": "AWAvenue-Ads-Rule",
+        "server": "dns_block"
+      }
+    ]
+  },
+  "route": {
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "AWAvenue-Ads-Rule",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.json"
+      }
+    ]
+  }
+}
