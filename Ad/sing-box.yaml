@@ -8,12 +8,6 @@
       {
         "tag": "dns-remote",
         "address": "https://223.5.5.5/dns-query",
-        "address_resolver": "dns-local",
-        "detour": "direct"
-      },
-      {
-        "tag": "dns-local",
-        "address": "223.5.5.5",
         "detour": "direct"
       },
       {
@@ -27,17 +21,20 @@
         "server": "dns-block"
       }
     ],
-    "final": "dns-remote",
-    "strategy": "prefer_ipv4"
+    "final": "dns-remote"
   },
   "inbounds": [
     {
       "type": "tun",
-      "inet4_address": "172.19.0.1/30",
+      "tag": "tun-in",
+      "interface_name": "tun0",
+      "address": [
+        "172.19.0.1/30"
+      ],
       "auto_route": true,
-      "strict_route": true,
-      "sniff": true,
-      "stack": "mixed"
+      "strict_route": false,
+      "stack": "system",
+      "sniff": true
     }
   ],
   "outbounds": [
@@ -70,9 +67,8 @@
         "tag": "ads",
         "type": "remote",
         "format": "source",
-        "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.json",
-        "download_detour": "direct",
-        "update_interval": "1d"
+        "url": "https://fastly.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Singbox.json",
+        "download_detour": "direct"
       }
     ],
     "final": "direct",
