@@ -1,0 +1,24 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+proxies: 
+  - name: "直连"
+    type: direct
+    udp: true
+proxy-groups:
+  - name: 默认
+    type: select
+    proxies: [直连]
+rule-providers:  
+  那个谁520规则:
+    type: http
+    behavior: domain
+    format: yaml
+    path: ./rule_providers/clash_meta.yaml
+    url: "https://raw.githubusercontent.com/qq5460168/AD886/main/clash_meta.yaml"
+    interval: 86400
+rules:
+  - RULE-SET,那个谁520规则,REJECT
