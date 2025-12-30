@@ -1,0 +1,29 @@
+{
+  "route": 
+  {
+    "rules": 
+    [
+      {
+        "rule_set": "AD886",
+        "outbound": "AD886"
+      }
+    ],
+    "rule_set": 
+    [
+      {
+        "tag": "AD886",
+        "type": "remote", 
+        "format": "source",
+        "url": "https://raw.githubusercontent.com/qq5460168/AD886/main/Singbox.json",
+        "update_interval": 120
+      }
+    ]
+  },
+  "outbounds": 
+  [
+    {
+      "type": "block",
+      "tag": "AD886"
+    }
+  ]
+}
