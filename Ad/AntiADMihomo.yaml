@@ -13,12 +13,20 @@ proxy-groups:
     type: select
     proxies: [直连]
 rule-providers:  
-  AntiAD规则:
+  AntiAD拦截规则:
     type: http
     behavior: domain
     format: yaml
-    path: ./rule_providers/mihomo.mrs
-    url: "https://gh-proxy.org/https://raw.githubusercontent.com/privacy-protection-tools/anti-ad.github.io/master/docs/mihomo.mrs"
+    path: ./rule_providers/anti-ad-clash.yaml
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml"
+    interval: 86400
+  AntiAD白名单规则:
+    type: http
+    behavior: domain
+    format: yaml
+    path: ./rule_providers/anti-ad-white-for-clash.yaml
+    url: "https://gh-proxy.org/https://raw.githubusercontent.com/privacy-protection-tools/dead-horse/master/anti-ad-white-for-clash.yaml"
     interval: 86400
 rules:
-  - RULE-SET,AntiAD规则,REJECT
+  - RULE-SET,AntiAD拦截规则,REJECT
+  - RULE-SET,AntiAD白名单规则,DIRECT
