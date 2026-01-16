@@ -441,7 +441,7 @@ DOMAIN-SUFFIX,tidal-cms.s3.amazonaws.com
 DOMAIN-SUFFIX,tidal.com
 DOMAIN-SUFFIX,tidalhifi.com
 
-# TaiWanGood 台湾好
+# TaiWanGood
 USER-AGENT,TaiwanGood*
 DOMAIN,hamifans.emome.net
 DOMAIN-SUFFIX,skyking.com.tw
@@ -511,3 +511,9 @@ USER-AGENT,*com.google.ios.youtubemusic*
 USER-AGENT,YouTubeMusic*
 USER-AGENT,com.google.ios.youtubemusic*
 DOMAIN,music.youtube.com
+
+
+#自制测试
+DOMAIN-SUFFIX,spclient.wg.spotify.com
+DOMAIN-SUFFIX,apresolve.spotify.com
+DOMAIN-SUFFIX,www.spotify.com
